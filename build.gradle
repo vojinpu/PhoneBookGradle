@@ -1,0 +1,75 @@
+
+group = 'com.example.appengine'   // Generated output GroupId
+version = '1.0-SNAPSHOT'          // Version in generated output
+
+
+apply plugin: 'java'  
+apply plugin: 'appengine'
+
+
+// START SNIPPET use-war-plugin
+apply plugin: 'war'
+// END SNIPPET use-war-plugin
+
+def appengineVersion = "1.9.54"
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile group: 'commons-io', name: 'commons-io', version: '1.4'
+    compile group: 'log4j', name: 'log4j', version: '1.2.15', ext: 'jar'
+}
+
+
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.google.appengine:gradle-appengine-plugin:1.9.54'
+    }
+}
+
+
+
+
+
+
+
+
+dependencies {
+  providedCompile group: 'javax.servlet', name: 'servlet-api', version:'2.5'
+  appengineSdk  'com.google.appengine:appengine-java-sdk:1.9.54'
+  
+  compile "javax.servlet:servlet-api:2.5"
+  compile "com.google.appengine:appengine-api-1.0-sdk:${appengineVersion}"
+   
+// Add your dependencies here.
+
+}
+
+
+
+
+
+dependencies {
+    compile files('lib/appengine-api-1.0-sdk-1.5.0.jar', 'lib/appengine-api-labs-1.7.0.jar', 'lib/gson-2.8.1-javadoc.jar', 'lib/gson-2.2.2.jar')
+    compile fileTree(dir: 'lib', include: '*.jar')
+    compile 'com.google.cloud:google-cloud-datastore:1.3.1'
+}
+
+appengine {
+   httpPort = 8888
+   downloadSdk = true
+  appcfg {
+    oauth2 = true
+  }
+}
+
+
+

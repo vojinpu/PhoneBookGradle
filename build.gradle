@@ -3,8 +3,25 @@ group = 'com.example.appengine'   // Generated output GroupId
 version = '1.0-SNAPSHOT'          // Version in generated output
 
 
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.5.RELEASE")
+    }
+}
+
+
+
 apply plugin: 'java'  
 apply plugin: 'appengine'
+apply plugin: 'application'
+
+
+
+
+
 
 
 // START SNIPPET use-war-plugin
@@ -15,13 +32,13 @@ def appengineVersion = "1.9.54"
 
 sourceCompatibility = 1.7
 targetCompatibility = 1.7
+
 repositories {
     jcenter()
 }
 
 dependencies {
     compile group: 'commons-io', name: 'commons-io', version: '1.4'
-    compile group: 'log4j', name: 'log4j', version: '1.2.15', ext: 'jar'
 }
 
 
@@ -48,10 +65,13 @@ dependencies {
   
   compile "javax.servlet:servlet-api:2.5"
   compile "com.google.appengine:appengine-api-1.0-sdk:${appengineVersion}"
+  compile 'com.google.appengine:appengine-api-labs:1.7.4'
    
 // Add your dependencies here.
 
 }
+
+
 
 
 
@@ -64,7 +84,7 @@ dependencies {
 }
 
 appengine {
-   httpPort = 8888
+   httpPort = 8892
    downloadSdk = true
   appcfg {
     oauth2 = true

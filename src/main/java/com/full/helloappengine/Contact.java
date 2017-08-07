@@ -120,6 +120,7 @@ public class Contact {
 		try {
 			obj = new JSONObject(query);
 	
+			System.out.println("EVo ga objekat " + obj.toString());
 			
 			DatastoreService ds = DBConnector.getConnector();
 			Entity entity = new Entity("Contact");
@@ -156,7 +157,7 @@ public class Contact {
 		
 	}
 
-	/*public static void UPDATE(String query){
+	public static void UPDATE(String query){
 		
 		
 		JSONObject obj;
@@ -207,7 +208,7 @@ public class Contact {
 		}
 
 		
-	}*/
+	}
 	
 	public static ArrayList<Contact> SEARCH(String queryString){
 		
@@ -264,14 +265,9 @@ public class Contact {
 		//PhoneBook phoneBook = PhoneBook.getPhoneBook();
 		ArrayList<Contact> contacts = new ArrayList<>();
 		
-		System.out.println("1");
 		DatastoreService ds = DBConnector.getConnector();
-		System.out.println("2.1");
 		Query q = new Query("Contact");
-		System.out.println("2.5");
 		PreparedQuery pq = ds.prepare(q);
-		System.out.println("3");
-		System.out.println(pq);
 		for(Entity u1:pq.asIterable()){
 			
 			
@@ -282,9 +278,7 @@ public class Contact {
 
 			contacts.add(ct);
 			
-			System.out.println("4");
 		}
-		System.out.println("5");
 
 		System.out.println("Contacts returned");
 		return contacts;

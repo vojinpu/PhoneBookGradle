@@ -15,7 +15,7 @@
 	window.onload = function addPhone() {
 
 		var xhttp = new XMLHttpRequest();
-		xhttp.open("GET", "/handle?id=all", true);
+		xhttp.open("GET", "/contacts/all", true);
 		xhttp.send();
 
 		xhttp.onreadystatechange = function() {
@@ -59,7 +59,7 @@
 		
 		
 		 var xhttp = new XMLHttpRequest();
-		 xhttp.open("DELETE", "/handle?deleteContact="+key, true);
+		 xhttp.open("DELETE", "/contacts?deleteContact="+key, true);
 		 xhttp.send();
 		
 		 

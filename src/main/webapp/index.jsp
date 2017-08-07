@@ -9,7 +9,9 @@
 <html>
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="pragma" content="no-cache" />
 <title>Contacts</title>
 
 
@@ -29,7 +31,7 @@ window.addEventListener( "pageshow", function ( event ) {
 
 
 
-
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
 
 
@@ -41,13 +43,14 @@ window.addEventListener( "pageshow", function ( event ) {
 window.onload = function showContact() {
 		
 		var xhttp = new XMLHttpRequest();
-		xhttp.open("GET", "/handle?id=all", true);
+		xhttp.open("GET", "/contacts/all ", true);
 		xhttp.send();
 		
 
 		xhttp.onreadystatechange = function() {
 			if (this.readyState == 4 && this.status == 200) {
 
+				console.log('stigao odgovor')
 				jsonText = xhttp.responseText;
 				localStorage.lastname = jsonText;
 				
@@ -57,6 +60,11 @@ window.onload = function showContact() {
 				
 			}
 		};
+		
+		
+		
+		
+		
 				
 	};
 	
@@ -74,7 +82,7 @@ window.onload = function showContact() {
 	<h1>Welcome to PhoneBook</h1>
 
 
-
+	<h2>$(welcomeMessage)</h2>
 
 
 
@@ -101,7 +109,7 @@ window.onload = function showContact() {
 <jsp:directive.include file = "contact.html" />
 
 
-<h1>TEST TEST TEST</h1>
+<h1>TEST TEST TEST22333</h1>
 
 
 </body>

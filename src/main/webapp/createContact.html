@@ -164,15 +164,15 @@ function addContact(){
 	if(key !== null){
 		
 		
-		xhttp.open("PUT", "/handle", true);
+		xhttp.open("PUT", "/contacts", true);
 		
 		
 	}
 	 
 	
 	else {
-		
-		xhttp.open("POST", "/handle", true);
+		console.log("Saljemo post request.")
+		xhttp.open("POST", "/contacts", true);
 		
 		
 	}

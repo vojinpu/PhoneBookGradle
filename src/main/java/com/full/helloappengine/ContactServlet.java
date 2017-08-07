@@ -17,35 +17,35 @@ import com.google.gson.GsonBuilder;
 public class ContactServlet extends HttpServlet{
 	
 	
-	@Override
-	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-
-		Gson gson = new GsonBuilder().setPrettyPrinting().create();
-		
-		
-		String id = req.getParameter("id");
-		String search = req.getParameter("search");
-		
-		String strJson = "";
-		
-		if(id != null && id.equals("all"))
-			strJson = gson.toJson(Contact.getContacts());
-		
-		else if(id != null)
-			strJson = gson.toJson(Contact.getContact(id));
-		
-		else if(search != null){
-			strJson = gson.toJson(Contact.SEARCH(search));
-		}
-		
-
-		System.out.println("Jesmo li stigli ovde?");
-		
-		resp.setContentType("text/html");
-		resp.getWriter().println(strJson);
-		
-
-	}
+//	@Override
+//	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+//
+//		Gson gson = new GsonBuilder().setPrettyPrinting().create();
+//		
+//		
+//		String id = req.getParameter("id");
+//		String search = req.getParameter("search");
+//		
+//		String strJson = "";
+//		
+//		if(id != null && id.equals("all"))
+//			strJson = gson.toJson(Contact.getContacts());
+//		
+//		else if(id != null)
+//			strJson = gson.toJson(Contact.getContact(id));
+//		
+//		else if(search != null){
+//			strJson = gson.toJson(Contact.SEARCH(search));
+//		}
+//		
+//
+//		System.out.println("Jesmo li stigli ovde?");
+//		
+//		resp.setContentType("text/html");
+//		resp.getWriter().println(strJson);
+//		
+//
+//	}
 	
 
 

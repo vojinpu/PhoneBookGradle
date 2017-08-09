@@ -7,7 +7,7 @@
  <script>
     function searchContact(){
     	var xhttp = new XMLHttpRequest();
-    	xhttp.open("GET", "/handle?search=" + document.getElementById('search_label').value, true);
+    	xhttp.open("GET", "/contacts?query=" + document.getElementById('search_label').value, true);
 		xhttp.send();
 		
 		

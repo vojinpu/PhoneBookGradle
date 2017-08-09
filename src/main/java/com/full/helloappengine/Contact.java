@@ -287,14 +287,14 @@ public class Contact {
 	}
 	
 	
-	public static Contact getContact(String query){
+	public static Contact getContact(String id){
 		
 		
 		
 		DatastoreService ds = DBConnector.getConnector();
 		
 
-		Key  key = KeyFactory.createKey("Contact", Long.parseLong(query));
+		Key  key = KeyFactory.createKey("Contact", Long.parseLong(id));
 		Contact ct = null;
 		Entity u1;
 		try {

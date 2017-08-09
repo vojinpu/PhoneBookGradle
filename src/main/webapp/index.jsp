@@ -17,15 +17,6 @@
 
 <input type="hidden" id="refreshed" value="no">
 
-<script type="text/javascript">
-window.addEventListener( "pageshow", function ( event ) {
-	  var historyTraversal = event.persisted || ( typeof window.performance != "undefined" && window.performance.navigation.type === 2 );
-	  if ( historyTraversal ) {
-	    // Handle page restore.
-	    window.location.reload(true);
-	  }
-	});
-</script>
 
 
 
@@ -82,7 +73,6 @@ window.onload = function showContact() {
 	<h1>Welcome to PhoneBook</h1>
 
 
-	<h2>$(welcomeMessage)</h2>
 
 
 
@@ -109,8 +99,7 @@ window.onload = function showContact() {
 <jsp:directive.include file = "contact.html" />
 
 
-<h1>TEST TEST TEST22333</h1>
-
+<h1>sdadsdasdas</h1>
 
 </body>
 

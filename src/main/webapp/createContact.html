@@ -21,7 +21,7 @@ window.onload = function viewContact(){
 		console.log('we have a parametar..' + key)
 	
 		var xhttp = new XMLHttpRequest();
-		xhttp.open("GET", "/handle?id="+key, true);
+		xhttp.open("GET", "/contacts/"+key, true);
 		xhttp.send();
 
 		xhttp.onreadystatechange = function() {
@@ -224,7 +224,7 @@ function getParameterByName(name, url) {
 
 <h2>Adding contacts:</h2>
 
-<form action="/handle" method="post" >
+<form action="/contacts" method="post" >
 	
 	Name   :  <input type="text" name="name" id="name"></input><br/>
 	

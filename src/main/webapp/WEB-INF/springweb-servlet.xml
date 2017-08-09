@@ -14,20 +14,25 @@
 
     
     
-    <context:component-scan base-package="com.full.helloappengine.SpringController" />
-    
+	<bean id = "cronScheduler" class = "com.full.helloappengine.Cron"> </bean>
+	    
+	    
 
     
-	<bean name = "/contacts" class = "com.full.helloappengine.SpringController" />
+	<bean name = "/contacts*" class = "com.full.helloappengine.SpringController" />
+ 
     
     
-<bean id = "viewResolver"
-		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix">
-            <value>/</value>
-        </property>
-        <property name="suffix">
-            <value>.jsp</value>
-        </property>
-</bean>
+	<bean id = "viewResolver"
+			class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	        <property name="prefix">
+	            <value>/</value>
+	        </property>
+	        <property name="suffix">
+	            <value>.jsp</value>
+	        </property>
+	</bean>
+	
+	
+	
 </beans>

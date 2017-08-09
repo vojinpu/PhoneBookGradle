@@ -16,7 +16,7 @@
 
 function showContacts(jsonText2) {
 
-	
+	//TEST
 	
 Contacts = JSON.parse(jsonText2);
 var i = 1;
@@ -87,7 +87,7 @@ function showDetails(popup) {
 
 function editContact(key){
 	event.stopPropagation();
-	window.location.href = 'createContact.html?id=' + key	
+	window.location.href = 'createContact.html/' + key	
 	//alert("click")
 }
 
